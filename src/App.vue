@@ -1,32 +1,44 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
+    <Navbar />
+    <Doscg />
+    <Footer />
   </div>
 </template>
 
+<script>
+import Navbar from '@/components/layout/Navbar';
+import Footer from '@/components/layout/Footer';
+import Doscg from '@/views/Doscg';
+export default {
+  components: {
+    Navbar,
+    Footer,
+    Doscg
+  }
+};
+</script>
+
 <style lang="scss">
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: BlinkMacSystemFont, -apple-system, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    'Helvetica', 'Arial', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
   color: #2c3e50;
 }
 
-#nav {
-  padding: 30px;
+.body-content {
+  min-height: calc(100vh - 140px);
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
 
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
+a:hover,
+a.router-link-active,
+a.router-link-exact-active {
+  color: #fff !important;
+  cursor: pointer;
 }
 </style>
